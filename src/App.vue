@@ -1,47 +1,32 @@
 <template>
-  <ul>
-    <learning-resource v-for="resource in storedResources" :key="resource.id" :title="resource.title" :description="resource.description" :link="resource.link">
-       
-    </learning-resource>
-    <stored-resources :resources="storedResources"></stored-resources>
-  </ul>
+  <the-header title="RememberMe"></the-header>
+  <the-resources></the-resources>
 </template>
+
 <script>
-
-
-import StoredResources from './components/learning-resources/StoredResources.vue';
+import TheHeader from './components/layouts/TheHeader.vue';
+import TheResources from './components/learning-resources/TheResources.vue';
 
 export default {
-    components:{
-        StoredResources
-    },
-    data(){
-        return{
-            storedResources:[
-                {
-                    id: 'official-guide', title: 'Official Guide', description: 'the official Vue.js documented.',link: 'https://vuejs.org'
-                },
-                {
-                    id: 'google',title:'Google', description: 'the official Vue.js documented.',link: 'https://google.org'
-                }
-            ]
-        }
-    }
-}
+  components: {
+    TheHeader,
+    TheResources
+  }
+};
 </script>
-<style >
-     @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-    * {
-    box-sizing: border-box;
-    }
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
-    html {
-    font-family: 'Roboto', sans-serif;
-    }
+* {
+  box-sizing: border-box;
+}
 
-    body {
-    margin: 0;
-    }
-      
+html {
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  margin: 0;
+}
 </style>
